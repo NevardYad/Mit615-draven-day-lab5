@@ -8,12 +8,12 @@
 for i in 1..50
   name = Faker::Name.first_name
   email = Faker::Internet.safe_email(name)
+  message = Faker::TvShows::BojackHorseman.tongue_twister
 
   user = User.new
   user.name = name
   user.email = email
-
-
+  
   if user.save
     p "Saved user ##{i}: #{name} (#{email})"
     for ii in 1..50
@@ -30,10 +30,17 @@ for i in 1..50
   else
     p user.errors
   end
-  #for iii in 1..10
-  # comment = Comment.new
-  # comment.user = name
-  # comment.message = Faker::TvShows::BojackHorseman.tongue_twister
-  #end
+
+  for iii in 1..10
+    comment = Comment.new
+    comment.user = user
+    comment.article = article
+    comment.message = message
+    if comment.save
+      p "Comment ##{iii} saved for #{article} and #{name}"
+    else
+      p comment.errors
+    end
+  end
 end
 
