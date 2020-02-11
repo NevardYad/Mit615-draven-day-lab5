@@ -10,8 +10,9 @@ for i in 1..50
   email = Faker::Internet.safe_email(name)
 
   user = User.new
-  user.email = email
   user.name = name
+  user.email = email
+
 
   if user.save
     p "Saved user ##{i}: #{name} (#{email})"
@@ -20,6 +21,7 @@ for i in 1..50
       article.title = Faker::Book.title
       article.user = user
       article.content = Faker::Lorem.paragraph
+      article.comments = "Sample"
       if article.save
         p "Article ##{ii} saved for #{name}"
       else
@@ -29,10 +31,10 @@ for i in 1..50
   else
     p user.errors
   end
-  for iii in 1..10
-    comment = Comment.new
-    comment.user = name
-    comment.message = Faker::TvShows::BojackHorseman.tongue_twister
-  end
+  #for iii in 1..10
+  # comment = Comment.new
+  # comment.user = name
+  # comment.message = Faker::TvShows::BojackHorseman.tongue_twister
+  #end
 end
 
