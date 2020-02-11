@@ -20,13 +20,6 @@ for i in 1..50
       article.title = Faker::Book.title
       article.user = user
       article.content = Faker::Lorem.paragraph
-
-      for iii in 1..10
-        comment = Comment.new
-        comment.user = name
-        comment.article
-        comment.message = Faker::TvShows::BojackHorseman.tongue_twister
-      end
       if article.save
         p "Article ##{ii} saved for #{name}"
       else
@@ -36,6 +29,10 @@ for i in 1..50
   else
     p user.errors
   end
-
+  for iii in 1..10
+    comment = Comment.new
+    comment.user = name
+    comment.message = Faker::TvShows::BojackHorseman.tongue_twister
+  end
 end
 
