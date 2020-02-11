@@ -13,7 +13,7 @@ for i in 1..50
   user = User.new
   user.name = name
   user.email = email
-  
+
   if user.save
     p "Saved user ##{i}: #{name} (#{email})"
     for ii in 1..50
