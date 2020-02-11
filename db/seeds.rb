@@ -21,7 +21,7 @@ for i in 1..50
       article.title = Faker::Book.title
       article.user = user
       article.content = Faker::Lorem.paragraph
-      article.comments = "Sample"
+      article.comments.message = "sample"
       if article.save
         p "Article ##{ii} saved for #{name}"
       else
