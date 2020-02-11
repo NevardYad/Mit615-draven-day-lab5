@@ -23,10 +23,10 @@ for i in 1..50
       article.title = Faker::Book.title
       article.user = user
       article.content = Faker::Lorem.paragraph
-      if micropost.save
-        p "Micropost ##{ii} saved for #{name}"
+      if article.save
+        p "Article ##{ii} saved for #{name}"
       else
-        p micropost.errors
+        p article.errors
       end
     end
   else
