@@ -21,11 +21,10 @@ for i in 1..50
       article.user = user
       article.content = Faker::Lorem.paragraph
 
-
-
       for iii in 1..10
         comment = Comment.new
         comment.user = name
+        comment.article
         comment.message = Faker::TvShows::BojackHorseman.tongue_twister
       end
       if article.save
