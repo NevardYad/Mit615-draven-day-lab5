@@ -12,10 +12,7 @@ for i in 1..50
   user = User.new
   user.email = email
   user.name = name
-  for iii in 1..10
-    comment = Comment.new
-    comment.message = Faker::TvShows::BojackHorseman.tongue_twister
-  end
+
   if user.save
     p "Saved user ##{i}: #{name} (#{email})"
     for ii in 1..50
@@ -32,6 +29,10 @@ for i in 1..50
   else
     p user.errors
   end
-
+  for iii in 1..10
+    comment = Comment.new
+    comment.user = name
+    comment.message = Faker::TvShows::BojackHorseman.tongue_twister
+  end
 end
 
