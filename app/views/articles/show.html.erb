@@ -17,9 +17,9 @@
 
 <p>
   <strong>Comments:</strong>
-  <%=  @article.comments.each do |comment|%>
+  <%  @article.comments.each do |comment|%>
   <%= comment.message %>
-    <%end %>
+    <% end %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
