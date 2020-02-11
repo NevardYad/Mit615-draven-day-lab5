@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_171911) do
 
   create_table "articles", force: :cascade do |t|
     t.text "title"
-    t.text "#<CreateArticles:0x00007f954c00ac38>"
+    t.text "#<CreateArticles:0x000055ef919af868>"
     t.text "true"
     t.text "content"
     t.bigint "user_id"

@@ -26,11 +26,6 @@
     <%= form.collection_select :user_id, User.all, :id, :email%>
   </div>
 
-  <div class="field">
-    <%= form.label :comments %>
-    <%= form.text_field :comments %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>

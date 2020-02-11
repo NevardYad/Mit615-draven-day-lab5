@@ -10,15 +10,5 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Articles:</strong>
-  <%= @user.articles %>
-</p>
-
-<p>
-  <strong>Comments:</strong>
-  <%= @user.comments %>
-</p>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
